@@ -566,7 +566,7 @@ struct pcm_params *pcm_params_get(unsigned int card, unsigned int device,
 
     fd = open(fn, O_RDWR);
     if (fd < 0) {
-        fprintf(stderr, "cannot open device '%s'\n", fn);
+        //fprintf(stderr, "cannot open device '%s'\n", fn);
         goto err_open;
     }
 
@@ -576,7 +576,7 @@ struct pcm_params *pcm_params_get(unsigned int card, unsigned int device,
 
     param_init(params);
     if (ioctl(fd, SNDRV_PCM_IOCTL_HW_REFINE, params)) {
-        fprintf(stderr, "SNDRV_PCM_IOCTL_HW_REFINE error (%d)\n", errno);
+        //fprintf(stderr, "SNDRV_PCM_IOCTL_HW_REFINE error (%d)\n", errno);
         goto err_hw_refine;
     }
 
